@@ -1,9 +1,11 @@
+import Header from './components/Header';
 import './index.css';
 
 function App() {
   return (
     <>
-      <h1 className="text-green-500 text-5xl font-bold">Hello World</h1>
+      <Header />
+      <div className="bg-gray-100"></div>
     </>
   );
 }
