@@ -1,4 +1,5 @@
 import Header from './components/Header';
+import Home from './components/Home';
 import Layout from './components/Layout';
 import './index.css';
 
@@ -7,6 +8,7 @@ function App() {
     <>
       <Layout>
         <Header />
+        <Home />
       </Layout>
     </>
   );

@@ -21,6 +21,7 @@ function Header() {
                 className="h-3/4 flex items-center justify-center"
                 initial={{ y: -100, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
+                transition={{ duration: 0.2, ease: 'easeOut' }}
               >
                 <a
                   className="flex items-center justify-center w-full px-3 mt-12 max-md:mt-2 hover:text-gray-700 transition-all"
