@@ -1,11 +1,13 @@
 import Header from './components/Header';
+import Layout from './components/Layout';
 import './index.css';
 
 function App() {
   return (
     <>
-      <Header />
-      <div className="bg-gray-100"></div>
+      <Layout>
+        <Header />
+      </Layout>
     </>
   );
 }
