@@ -5,9 +5,10 @@ interface CardProps {
   description?: string;
   tags?: string[];
   imageUrl?: string;
+  imgHref?: string;
 }
 
-const Cards = ({ title, description, tags, imageUrl }: CardProps) => {
+const Cards = ({ title, description, tags, imageUrl, imgHref }: CardProps) => {
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -25,7 +26,11 @@ const Cards = ({ title, description, tags, imageUrl }: CardProps) => {
       }}
       className=" mb-3 sm:mb-8 last:mb-0"
     >
-      <section className="bg-gray-100 max-w-[42rem] border border-black/5 rounded-lg overflow-hidden sm:pr-8 relative sm:h-[20rem] hover:bg-gray-200 transition flex sm:flex-row flex-col">
+      <a
+        className="bg-gray-100 max-w-[42rem] border border-black/5 rounded-lg overflow-hidden sm:pr-8 relative sm:h-[20rem] hover:bg-gray-200 transition flex sm:flex-row flex-col "
+        href={imgHref}
+        target="_blank"
+      >
         <div className="pt-4 pb-7 px-5 sm:pl-10 sm:pr-2 sm:pt-10 sm:max-w-[50%] flex flex-col h-full">
           <h3 className="text-2xl font-semibold">{title}</h3>
           <p className="mt-2 leading-relaxed text-gray-700 ">{description}</p>
@@ -46,7 +51,7 @@ const Cards = ({ title, description, tags, imageUrl }: CardProps) => {
           className="absolute hidden sm:block top-8 h-[16rem] w-[35rem] rounded-lg shadow-2xl 
           -right-52"
         />
-      </section>
+      </a>
     </motion.div>
   );
 };

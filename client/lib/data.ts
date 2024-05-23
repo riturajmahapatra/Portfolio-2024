@@ -39,11 +39,20 @@ export const links = [
 
 export const projectsData = [
   {
+    title: 'Taxi App',
+    description:
+      'This project is a frontend prototype taxi booking application. Built with a focus on user experience, it provides a convenient and efficient way to hail a cab',
+    tags: ['HTML', 'CSS', 'JavaScript', 'Figma'],
+    imageUrl: taxiImg,
+    imgHref: 'https://ai-thinkers-assignment-sr2j.vercel.app/',
+  },
+  {
     title: 'JanSevva',
     description:
       'It is a NGO website which helps bridge the gap to connect donors with underprivileged children.',
     tags: ['React', 'MongoDB', 'Tailwind', 'Express'],
     imageUrl: jansevaImg,
+    imgHref: 'https://janseva-2-zeta.vercel.app/',
   },
   {
     title: 'Countrynomics',
@@ -51,6 +60,7 @@ export const projectsData = [
       'An interactive platform displaying economic and geographic data of various countries. Utilized an API to access and visualize real-time data on demographics, and geographical features',
     tags: ['React', 'Tailwind'],
     imageUrl: countrynomicsImg,
+    imgHref: 'https://countrynomics.vercel.app/',
   },
   {
     title: 'Car Wala',
@@ -58,13 +68,15 @@ export const projectsData = [
       'A comprehensive database of car models with detailed specifications. Includes fuel efficiency ratings, estimated costs, and comparisons between models.',
     tags: ['Next.js', 'Tailwind', 'MongoDB'],
     imageUrl: carWalaImg,
+    imgHref: 'https://car-wala.vercel.app',
   },
   {
-    title: 'Word Analytics',
+    title: 'Crud App',
     description:
-      'A public web app for quick analytics on text. It shows word count, character count and social media post limits.',
-    tags: ['React', 'Next.js', 'SQL', 'Tailwind', 'Framer'],
-    imageUrl: taxiImg,
+      'This CRUD app is a fundamental web application that allows users to perform Create, Read, Update, and Delete operations on data.',
+    tags: ['React', 'Express', 'Node.js', 'MongoDB'],
+    imageUrl: carWalaImg,
+    imgHref: 'https://car-wala.vercel.app',
   },
 ];
 
@@ -105,14 +117,8 @@ export const skillsData = [
   'Node.js',
   'Git',
   'Tailwind',
-  'Prisma',
   'MongoDB',
-  'Redux',
-  'GraphQL',
-  'Apollo',
   'Express',
-  'PostgreSQL',
-  'Python',
-  'Django',
   'Framer Motion',
+  'Figma',
 ] as const;
