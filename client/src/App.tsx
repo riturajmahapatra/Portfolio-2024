@@ -1,5 +1,5 @@
 import Header from './components/Header';
-import Home from './components/Home';
+import Home from './components/Hero-Section/Home';
 import Layout from './components/Layout';
 import './index.css';
 

@@ -37,6 +37,37 @@ export const links = [
   },
 ] as const;
 
+export const projectsData = [
+  {
+    title: 'JanSevva',
+    description:
+      'It is a NGO website which helps bridge the gap to connect donors with underprivileged children.',
+    tags: ['React', 'MongoDB', 'Tailwind', 'Express'],
+    imageUrl: jansevaImg,
+  },
+  {
+    title: 'Countrynomics',
+    description:
+      'An interactive platform displaying economic and geographic data of various countries. Utilized an API to access and visualize real-time data on demographics, and geographical features',
+    tags: ['React', 'Tailwind'],
+    imageUrl: countrynomicsImg,
+  },
+  {
+    title: 'Car Wala',
+    description:
+      'A comprehensive database of car models with detailed specifications. Includes fuel efficiency ratings, estimated costs, and comparisons between models.',
+    tags: ['Next.js', 'Tailwind', 'MongoDB'],
+    imageUrl: carWalaImg,
+  },
+  {
+    title: 'Word Analytics',
+    description:
+      'A public web app for quick analytics on text. It shows word count, character count and social media post limits.',
+    tags: ['React', 'Next.js', 'SQL', 'Tailwind', 'Framer'],
+    imageUrl: taxiImg,
+  },
+];
+
 export const experiencesData = [
   {
     title: 'Graduated bootcamp',
@@ -61,37 +92,6 @@ export const experiencesData = [
       "I'm now a full-stack developer working as a freelancer. My stack includes React, Next.js, TypeScript, Tailwind, Prisma and MongoDB. I'm open to full-time opportunities.",
     icon: React.createElement(FaReact),
     date: '2021 - present',
-  },
-] as const;
-
-export const projectsData = [
-  {
-    title: 'CorpComment',
-    description:
-      'I worked as a full-stack developer on this startup project for 2 years. Users can give public feedback to companies.',
-    tags: ['React', 'Next.js', 'MongoDB', 'Tailwind', 'Prisma'],
-    imageUrl: jansevaImg,
-  },
-  {
-    title: 'rmtDev',
-    description:
-      'Job board for remote developer jobs. I was the front-end developer. It has features like filtering, sorting and pagination.',
-    tags: ['React', 'TypeScript', 'Next.js', 'Tailwind', 'Redux'],
-    imageUrl: countrynomicsImg,
-  },
-  {
-    title: 'Word Analytics',
-    description:
-      'A public web app for quick analytics on text. It shows word count, character count and social media post limits.',
-    tags: ['React', 'Next.js', 'SQL', 'Tailwind', 'Framer'],
-    imageUrl: taxiImg,
-  },
-  {
-    title: 'Word Analytics',
-    description:
-      'A public web app for quick analytics on text. It shows word count, character count and social media post limits.',
-    tags: ['React', 'Next.js', 'SQL', 'Tailwind', 'Framer'],
-    imageUrl: carWalaImg,
   },
 ] as const;
 

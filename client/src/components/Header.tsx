@@ -12,7 +12,7 @@ function Header() {
         ></motion.div>
         <nav
           className="fixed flex top-[0.15rem] left-1/2 h-12 -translate-x-1/2
-        py-2 "
+        py-2 !scroll-smooth"
         >
           <ul className="flex  w-[22rem] flex-wrap items-center justify-center gap-y-1 text-[1rem]  text-gray-500 sm:flex-nowrap sm:gap-5">
             {links.map((link) => (
