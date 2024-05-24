@@ -20,7 +20,7 @@ export default function Footer() {
           </span>
           <br />
         </span>{' '}
-        built with React, TypeScript, Tailwind CSS, Framer Motion,Express,
+        built with React, TypeScript, Tailwind CSS, Framer Motion, Express,
         Nodemailer, Vercel hosting.
       </p>
     </footer>
