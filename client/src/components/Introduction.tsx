@@ -1,4 +1,4 @@
-import myImg from '../assets/rituraj-1.jpeg';
+// import myImg from '../assets/rituraj-1.jpeg';
 import { motion } from 'framer-motion';
 import cv from '../assets/CV/CV_RITURAJ_24.pdf';
 import '../index.css';
@@ -17,15 +17,15 @@ export default function Introduction() {
           transition={{ type: 'tween', duration: 0.25 }}
           id="home"
         >
-          <img
+          {/* <img
             src={myImg}
             alt="rituraj"
             className="w-24 object-cover quality-high h-auto rounded-full shadow-2xl border-[0.3rem] border-white mt-28"
-          />
+          /> */}
         </motion.div>
       </div>
       <motion.p
-        className="mb-10 mt-4 px-4 text-2xl font-medium !leading-[1.5] sm:text-4xl "
+        className="mb-10 mt-[7rem] px-4 text-2xl font-medium !leading-[1.5] sm:text-4xl "
         initial={{ opacity: 0, y: 100 }}
         animate={{ opacity: 1, y: 0 }}
       >

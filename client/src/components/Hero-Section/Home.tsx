@@ -1,5 +1,7 @@
 import About from '../About';
+import Contact from '../Contact';
 import Exprience from '../Exprience';
+import Footer from '../Footer';
 import Introduction from '../Introduction';
 import Projects from '../Projects';
 import SectionDivider from '../Section-Divider';
@@ -15,6 +17,8 @@ export default function Home() {
       <SectionDivider />
       <Skills />
       <Exprience />
+      <Contact />
+      <Footer />
     </div>
   );
 }

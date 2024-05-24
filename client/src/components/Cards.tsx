@@ -12,9 +12,9 @@ const Cards = ({ title, description, tags, imageUrl, imgHref }: CardProps) => {
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: ref,
-    offset: ['0 1', '1.33 1'],
+    offset: ['0 2', '1.6 1'],
   });
-  const scaleProgess = useTransform(scrollYProgress, [0, 1], [0.8, 1]);
+  const scaleProgess = useTransform(scrollYProgress, [0, 1], [0.5, 1]);
   const opacityProgess = useTransform(scrollYProgress, [0, 1], [0.6, 1]);
 
   return (
@@ -24,7 +24,7 @@ const Cards = ({ title, description, tags, imageUrl, imgHref }: CardProps) => {
         scale: scaleProgess,
         opacity: opacityProgess,
       }}
-      className=" mb-3 sm:mb-8 last:mb-0"
+      className=" my-3 sm:mb-8 last:mb-0"
     >
       <a
         className="bg-gray-100 max-w-[42rem] border border-black/5 rounded-lg overflow-hidden sm:pr-8 relative sm:h-[20rem] hover:bg-gray-200 transition flex sm:flex-row flex-col "
