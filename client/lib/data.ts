@@ -1,7 +1,5 @@
 import React from 'react';
 import { CgWorkAlt } from 'react-icons/cg';
-import { FaReact } from 'react-icons/fa';
-import { LuGraduationCap } from 'react-icons/lu';
 import jansevaImg from '../src/assets/js-1.png';
 import carWalaImg from '../src/assets/cw-1.png';
 import taxiImg from '../src/assets/tx-1.png';
@@ -82,28 +80,30 @@ export const projectsData = [
 
 export const experiencesData = [
   {
-    title: 'Graduated bootcamp',
-    location: 'Miami, FL',
+    title: 'Junior Developer Intern',
+    company: 'AI Thinkers',
+    location: 'Remote',
     description:
-      'I graduated after 6 months of studying. I immediately found a job as a front-end developer.',
-    icon: React.createElement(LuGraduationCap),
-    date: '2019',
+      'Started my full stack development journey as a junior developer intern. Leveraged the opportunity to upskill myself and tackle full-stack projects, expanding my skillset beyond front-end development.',
+    icon: React.createElement(CgWorkAlt),
+    date: 'Feb 2024 - present',
   },
   {
     title: 'Front-End Developer',
-    location: 'Orlando, FL',
-    description:
-      'I worked as a front-end developer for 2 years in 1 job and 1 year in another job. I also upskilled to the full stack.',
+    location: 'Dwarka , Delhi',
+    company: 'Alishu Infotech Pvt Ltd.',
+    description: `Leveraged my front-end development skills for 6 months. I built and maintained user interfaces for various projects like NGO websites, security websites, and e-commerce platforms.`,
     icon: React.createElement(CgWorkAlt),
-    date: '2019 - 2021',
+    date: 'May 2023 - Nov 2023',
   },
   {
-    title: 'Full-Stack Developer',
-    location: 'Houston, TX',
+    title: 'Channel Manager',
+    location: 'Gurugram , Hayana',
+    company: '4b Network Pvt Ltd.',
     description:
-      "I'm now a full-stack developer working as a freelancer. My stack includes React, Next.js, TypeScript, Tailwind, Prisma and MongoDB. I'm open to full-time opportunities.",
-    icon: React.createElement(FaReact),
-    date: '2021 - present',
+      'Leveraged my expertise in channel management for a year. Built and nurtured strong relationships with key partners, resulting in increased sales and market penetration. ',
+    icon: React.createElement(CgWorkAlt),
+    date: 'Apr 2022 - Mar 2023',
   },
 ] as const;
 

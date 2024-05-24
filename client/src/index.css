@@ -23,3 +23,9 @@ body {
 html {
   --line-color: #e5e7eb;
 }
+
+.fl-c {
+  display: flex;
+  justify-items: center;
+  align-items: center;
+}

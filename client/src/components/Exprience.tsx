@@ -12,9 +12,9 @@ function Exprience() {
       id="experience"
       className="flex flex-col justify-center items-center scroll-mt-28 mb-28 sm:mb-40"
     >
-      <SectionHeading>My experience</SectionHeading>
+      <SectionHeading>My Experience</SectionHeading>
       <VerticalTimeline lineColor="">
-        {experiencesData.map((item, index) => (
+        {experiencesData.map((experience, index) => (
           <VerticalTimelineElement
             key={index}
             contentStyle={{
@@ -26,18 +26,22 @@ function Exprience() {
             contentArrowStyle={{
               borderRight: '0.4rem solid #9ca3af',
             }}
-            date={item.date}
-            icon={item.icon}
+            date={experience.date}
+            icon={experience.icon}
             iconStyle={{
               background: 'rgba(255, 255, 255)',
               fontSize: '1.5rem',
             }}
           >
-            <h3 className="font-semibold text-xl capitalize">{item.title}</h3>
-            <p className="font-normal !mt-0">{item.location}</p>
+            <h3 className="font-semibold text-xl capitalize">
+              {experience.title}
+            </h3>
+            <p className="font-normal !mt-0">
+              {experience.company} &nbsp; - &nbsp; {experience.location}
+            </p>
             <hr className="my-3 h-px border-t-0 bg-transparent bg-gradient-to-r from-transparent via-neutral-500 to-transparent opacity-25 dark:via-neutral-400" />
             <p className="!mt-1 !font-normal text-gray-700 ">
-              {item.description}
+              {experience.description}
             </p>
           </VerticalTimelineElement>
         ))}
