@@ -19,3 +19,7 @@ body {
 .red {
   border: 1px solid red;
 }
+
+html {
+  --line-color: #e5e7eb;
+}

@@ -6,7 +6,7 @@ interface SectionHeadingProps {
 
 function SectionHeading({ children }: SectionHeadingProps) {
   return (
-    <div className="text-4xl font-bold leading-[5rem] sm:leading-[7rem] capitalize">
+    <div className="text-4xl font-bold text-gray-700 leading-[5rem] sm:leading-[7rem] capitalize">
       {children}
     </div>
   );
