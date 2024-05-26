@@ -1,8 +1,30 @@
 import { motion } from 'framer-motion';
 import SectionHeading from './SectionHeading';
 import { FaPaperPlane } from 'react-icons/fa6';
+import axios from 'axios';
 
+interface ContactForm {
+  name: string;
+  email: string;
+  message: string;
+}
 function Contact() {
+  const submitHandler = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    const formData = new FormData(event.target);
+    const name = formData.get('name') as string;
+    const email = formData.get('email') as string;
+    const message = formData.get('message') as string;
+    const data: ContactForm = { name, email, message };
+
+    try {
+      const response = await axios.post('/send-email', data);
+      console.log('enail sent sucessfully', response.data);
+    } catch (error) {
+      console.error('Error sending email:', error);
+    }
+  };
+
   return (
     <div>
       <motion.section
@@ -31,7 +53,18 @@ function Contact() {
           or through this form.
         </p>
 
-        <form className="mt-10 flex  flex-col dark:text-black">
+        <form
+          className="mt-10 flex gap-3  flex-col dark:text-black"
+          onSubmit={submitHandler}
+        >
+          <input
+            className="h-14 px-4 border rounded-lg borderBlack  dark:bg-opacity-80 dark:focus:bg-opacity-100 transition-all dark:outline-none"
+            name="name"
+            type="text"
+            required
+            maxLength={50}
+            placeholder="Your Name"
+          />
           <input
             className="h-14 px-4 border rounded-lg borderBlack  dark:bg-opacity-80 dark:focus:bg-opacity-100 transition-all dark:outline-none"
             name="senderEmail"
@@ -41,7 +74,7 @@ function Contact() {
             placeholder="Your email"
           />
           <textarea
-            className="h-52 my-3 border rounded-lg borderBlack p-4  dark:bg-opacity-80 dark:focus:bg-opacity-100 transition-all dark:outline-none"
+            className="h-52  border rounded-lg borderBlack p-4  dark:bg-opacity-80 dark:focus:bg-opacity-100 transition-all dark:outline-none"
             name="message"
             placeholder="Your message"
             required
