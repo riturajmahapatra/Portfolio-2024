@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import SectionHeading from './SectionHeading';
 import { FaPaperPlane } from 'react-icons/fa6';
 import axios from 'axios';
+import { useState } from 'react';
 
 interface ContactForm {
   name: string;
@@ -9,18 +10,26 @@ interface ContactForm {
   message: string;
 }
 function Contact() {
-  const submitHandler = async ({ event }: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    const formData = new FormData(event.target);
-    const name = formData.get('name') as string;
-    const email = formData.get('email') as string;
-    const message = formData.get('message') as string;
-    const data: ContactForm = { name, email, message };
+  const [formData, setFormData] = useState<ContactForm>({
+    name: '',
+    email: '',
+    message: '',
+  });
 
+  const handleChange = (
+    event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const { name, value } = event.target;
+    setFormData((prevData) => ({ ...prevData, [name]: value }));
+    console.log(formData);
+  };
+
+  const submitHandler = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
     try {
       const response = await axios.post(
         'http://localhost:8500//send-email',
-        data
+        formData
       );
       console.log('email sent sucessfully', response.data);
     } catch (error) {
@@ -67,12 +76,14 @@ function Contact() {
             required
             maxLength={50}
             placeholder="Your Name"
+            onChange={handleChange}
           />
           <input
             className="h-14 px-4 border rounded-lg borderBlack  dark:bg-opacity-80 dark:focus:bg-opacity-100 transition-all dark:outline-none"
             name="senderEmail"
             type="email"
             required
+            onChange={handleChange}
             maxLength={500}
             placeholder="Your email"
           />
@@ -81,6 +92,7 @@ function Contact() {
             name="message"
             placeholder="Your message"
             required
+            onChange={handleChange}
             maxLength={5000}
           />
           <button

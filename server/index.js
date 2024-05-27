@@ -48,8 +48,8 @@ const transporter = nodemailer.createTransport({
 app.post('/send-email', (req, res) => {
   const { name, email, message } = req.body;
   const mailOptions = {
-    from: 'riturajmahapatra2@gmail.com', // Replace with your email
-    to: 'riturajmahapatra@gmail.com', // Replace with recipient email
+    from: EMAIL,
+    to: 'riturajmahapatra@gmail.com',
     subject: `Contact Form Submission from ${name}`,
     text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`,
   };
