@@ -39,20 +39,25 @@ app.get('/api/user/test', (req, res) => {
 
 const EMAIL = process.env.EMAIL_USERNAME;
 const PASSWORD = process.env.EMAIL_PASSWORD;
+console.log(EMAIL, PASSWORD);
 
 const transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: { user: EMAIL, pass: PASSWORD },
 });
+console.log('this is transporter', transporter.service, transporter.auth);
 
 app.post('/send-email', (req, res) => {
   const { name, email, message } = req.body;
   const mailOptions = {
     from: EMAIL,
-    to: 'riturajmahapatra@gmail.com',
+    to: `${email}`,
     subject: `Contact Form Submission from ${name}`,
     text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`,
   };
+
+  console.log('this is mail options to-->', mailOptions.message);
+
   if (!name || !email || !message) {
     return res.status(400).json({ error: 'Please enter all fields' });
   }

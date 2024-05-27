@@ -3,6 +3,7 @@ import SectionHeading from './SectionHeading';
 import { FaPaperPlane } from 'react-icons/fa6';
 import axios from 'axios';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 interface ContactForm {
   name: string;
@@ -15,6 +16,7 @@ function Contact() {
     email: '',
     message: '',
   });
+  const navigate = useNavigate();
 
   const handleChange = (
     event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -26,15 +28,18 @@ function Contact() {
 
   const submitHandler = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    console.log(formData);
     try {
       const response = await axios.post(
-        'http://localhost:8500//send-email',
+        'http://localhost:8500/send-email',
         formData
       );
       console.log('email sent sucessfully', response.data);
     } catch (error) {
       console.error('Error sending email:', error);
     }
+    // window.location.reload();
+    navigate('/');
   };
 
   return (
