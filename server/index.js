@@ -4,6 +4,7 @@ import dotenv from 'dotenv';
 import cors from 'cors';
 import mongoose from 'mongoose';
 import router from './Routes/userRoute.js';
+import authRouter from './Routes/authRoute.js';
 
 const app = express();
 app.use(express.json());
@@ -24,3 +25,6 @@ mongoose
   .catch((error) => console.error('Error connecting to MongoDB: ', error));
 
 app.use(router);
+
+/* signup */
+app.use('/api', authRouter);
