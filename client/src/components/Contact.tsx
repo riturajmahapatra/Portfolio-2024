@@ -76,12 +76,15 @@ function Contact() {
             required
             maxLength={50}
             placeholder="Your Name"
+            value={formData.name}
             onChange={(e) => setFormData({ ...formData, name: e.target.value })}
           />
           <input
             className="h-14 px-4 border rounded-lg borderBlack  dark:bg-opacity-80 dark:focus:bg-opacity-100 transition-all dark:outline-none"
             name="email"
             type="email"
+            required
+            value={formData.email}
             onChange={(e) =>
               setFormData({ ...formData, email: e.target.value })
             }
@@ -91,6 +94,8 @@ function Contact() {
           <textarea
             className="h-52  border rounded-lg borderBlack p-4  dark:bg-opacity-80 dark:focus:bg-opacity-100 transition-all dark:outline-none"
             name="message"
+            required
+            value={formData.message}
             placeholder="Your message"
             onChange={(e) =>
               setFormData({ ...formData, message: e.target.value })
