@@ -3,24 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio-2024: MERN Stack CRUD App</title>
-  <style>
-    body {
-      font-family: sans-serif;
-      margin: 0;
-      padding: 20px;
-    }
 
-    h1 {
-      text-align: center;
-      font-size: 2em;
-    }
-
-    .contact {
-      text-align: center;
-      margin-top: 20px;
-    }
-  </style>
 </head>
 <body>
   <h1>Portfolio-2024</h1>
