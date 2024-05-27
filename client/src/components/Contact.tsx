@@ -1,45 +1,40 @@
 import { motion } from 'framer-motion';
 import SectionHeading from './SectionHeading';
 import { FaPaperPlane } from 'react-icons/fa6';
-import axios from 'axios';
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 
-interface ContactForm {
-  name: string;
-  email: string;
-  message: string;
-}
 function Contact() {
-  const [formData, setFormData] = useState<ContactForm>({
-    name: '',
+  const initialFormState = {
     email: '',
+    name: '',
     message: '',
-  });
-  const navigate = useNavigate();
-
-  const handleChange = (
-    event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    const { name, value } = event.target;
-    setFormData((prevData) => ({ ...prevData, [name]: value }));
-    console.log(formData);
   };
 
-  const submitHandler = async (event: React.FormEvent<HTMLFormElement>) => {
+  const [formData, setFormData] = useState(initialFormState);
+
+  const sendEmail = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    console.log(formData);
+
+    const { email, name, message } = formData;
+
     try {
-      const response = await axios.post(
-        'http://localhost:8500/send-email',
-        formData
-      );
-      console.log('email sent sucessfully', response.data);
+      const response = await fetch('http://localhost:8500/register', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, name, message }),
+      });
+
+      if (response.ok) {
+        console.log('Email sent successfully!');
+        setFormData(initialFormState);
+        // window.location.reload();
+      } else {
+        const errorMessage = await response.text();
+        console.error('Failed to send email:', errorMessage);
+      }
     } catch (error) {
       console.error('Error sending email:', error);
     }
-    // window.location.reload();
-    navigate('/');
   };
 
   return (
@@ -72,7 +67,7 @@ function Contact() {
 
         <form
           className="mt-10 flex gap-3  flex-col dark:text-black"
-          onSubmit={submitHandler}
+          onSubmit={sendEmail}
         >
           <input
             className="h-14 px-4 border rounded-lg borderBlack  dark:bg-opacity-80 dark:focus:bg-opacity-100 transition-all dark:outline-none"
@@ -81,14 +76,15 @@ function Contact() {
             required
             maxLength={50}
             placeholder="Your Name"
-            onChange={handleChange}
+            onChange={(e) => setFormData({ ...formData, name: e.target.value })}
           />
           <input
             className="h-14 px-4 border rounded-lg borderBlack  dark:bg-opacity-80 dark:focus:bg-opacity-100 transition-all dark:outline-none"
-            name="senderEmail"
+            name="email"
             type="email"
-            required
-            onChange={handleChange}
+            onChange={(e) =>
+              setFormData({ ...formData, email: e.target.value })
+            }
             maxLength={500}
             placeholder="Your email"
           />
@@ -96,8 +92,9 @@ function Contact() {
             className="h-52  border rounded-lg borderBlack p-4  dark:bg-opacity-80 dark:focus:bg-opacity-100 transition-all dark:outline-none"
             name="message"
             placeholder="Your message"
-            required
-            onChange={handleChange}
+            onChange={(e) =>
+              setFormData({ ...formData, message: e.target.value })
+            }
             maxLength={5000}
           />
           <button

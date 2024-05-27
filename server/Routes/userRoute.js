@@ -1,12 +1,15 @@
 import express from 'express';
 // import { test } from '../Controller/userController.js';
-import { test } from '../Controller/userController.js';
 
-const router = express.Router();
+const router = new express.Router();
 
-router.get('/test', (res, req) => {
-  res.json({ message: 'API is working properly' });
+// router.get('/test', (res, req) => {
+//   res.json({ message: 'API is working properly' });
+// });
+// router.get('/rest', test);
+
+router.post('/register', (req, res) => {
+  console.log(req.body);
 });
-router.get('/rest', test);
 
 export default router;

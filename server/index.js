@@ -5,6 +5,7 @@ import dotenv from 'dotenv';
 import cors from 'cors';
 import mongoose from 'mongoose';
 import userRoutes from './Routes/userRoute.js';
+import router from './Routes/userRoute.js';
 
 // import portfoloRoutes from './Routes/portfolioRoute.js';
 
@@ -71,3 +72,5 @@ app.post('/send-email', (req, res) => {
     }
   });
 });
+
+app.use(router);
