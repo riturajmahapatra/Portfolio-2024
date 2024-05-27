@@ -3,7 +3,8 @@ import bodyParser from 'body-parser';
 import dotenv from 'dotenv';
 import cors from 'cors';
 import mongoose from 'mongoose';
-// import route from './Routes/portfolioRoute';
+import userRoutes from './Routes/userRoute.js';
+// import portfoloRoutes from './Routes/portfolioRoute.js';
 
 const app = express();
 app.use(express.json());
@@ -23,4 +24,11 @@ mongoose
   })
   .catch((error) => console.error('Error connecting to MongoDB: ', error));
 
-// app.use('/api', route);
+// app.use('/api', portfoloRoutes);
+
+//testing api
+app.use('/api', userRoutes); //not working with routes?
+
+app.get('/api/user/test', (req, res) => {
+  res.json('Hello World');
+});

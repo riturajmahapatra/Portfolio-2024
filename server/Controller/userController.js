@@ -1,4 +1,9 @@
-import { Intro } from '../Models/portfolioModel';
+export const test = (res, req) => {
+  console.log('ai is her');
+  res.json({ message: 'API is working properly' });
+};
+
+import { Intro } from '../Models/portfolioModel.js';
 
 export const IntroSection = async (res, req) => {
   try {
