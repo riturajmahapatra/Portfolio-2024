@@ -9,7 +9,7 @@ interface ContactForm {
   message: string;
 }
 function Contact() {
-  const submitHandler = async (event: React.FormEvent<HTMLFormElement>) => {
+  const submitHandler = async ({ event }: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const formData = new FormData(event.target);
     const name = formData.get('name') as string;
@@ -18,8 +18,11 @@ function Contact() {
     const data: ContactForm = { name, email, message };
 
     try {
-      const response = await axios.post('/send-email', data);
-      console.log('enail sent sucessfully', response.data);
+      const response = await axios.post(
+        'http://localhost:8500//send-email',
+        data
+      );
+      console.log('email sent sucessfully', response.data);
     } catch (error) {
       console.error('Error sending email:', error);
     }
