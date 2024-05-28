@@ -1,18 +1,19 @@
-export const test = (res, req) => {
-  console.log('ai is her');
-  res.json({ message: 'API is working properly' });
-};
-
-import { Intro } from '../Models/portfolioModel.js';
+import { Intro, About, Project, Experience } from '../Models/portfolioModel.js';
 
 export const IntroSection = async (res, req) => {
+  console.log('first');
   try {
-    const userIntro = await Intro.find();
-    console.log(userIntro);
-    if (!userIntro) {
-      return res.status(400).json({ msg: 'User Intro not found' });
-    }
-    return res.status(200).json({ msg: 'User created Sucessfully' });
+    const intros = await Intro.find();
+    const abouts = await About.find();
+    const projects = await Project.find();
+    const experiences = await Experience.find();
+
+    res.status(200).send({
+      userIntro: intros[0],
+      userAbout: abouts[0],
+      userProject: projects,
+      userExperience: experiences,
+    });
   } catch (error) {
     res.status(500).json({ error: error });
   }

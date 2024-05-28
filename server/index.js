@@ -5,6 +5,7 @@ import cors from 'cors';
 import mongoose from 'mongoose';
 import router from './Routes/userRoute.js';
 import authRouter from './Routes/authRoute.js';
+import portfolioRoute from '../server/Routes/portfolioRoute.js';
 
 const app = express();
 app.use(express.json());
@@ -32,3 +33,5 @@ app.use('/api/auth', authRouter);
 app.get('/api/user/test', (req, res) => {
   res.send('Hello World');
 });
+
+app.use('/api/data', portfolioRoute);

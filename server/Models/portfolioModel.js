@@ -36,13 +36,6 @@ const projectSchema = new mongoose.Schema({
   },
 });
 
-const skillSchema = new mongoose.Schema({
-  skills: {
-    type: [String],
-    required: true,
-  },
-});
-
 const experienceSchema = new mongoose.Schema({
   title: {
     type: String,
@@ -68,8 +61,7 @@ const experienceSchema = new mongoose.Schema({
   },
 });
 
-export const Intro = mongoose.model('Intro', introSchema);
-export const About = mongoose.model('About', aboutSchema);
-export const Project = mongoose.model('Project', projectSchema);
-export const Skill = mongoose.model('Skill', skillSchema);
-export const Experience = mongoose.model('Experience', experienceSchema);
+export const Intro = mongoose.model('intros', introSchema);
+export const About = mongoose.model('abouts', aboutSchema);
+export const Project = mongoose.model('projects', projectSchema);
+export const Experience = mongoose.model('experiences', experienceSchema);
