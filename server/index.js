@@ -4,7 +4,7 @@ import dotenv from 'dotenv';
 import cors from 'cors';
 import mongoose from 'mongoose';
 import router from './Routes/userRoute.js';
-// import authRouter from './Routes/authRoute.js';
+import authRouter from './Routes/authRoute.js';
 
 const app = express();
 app.use(express.json());
@@ -27,4 +27,8 @@ mongoose
 app.use(router);
 
 /* signup */
-// app.use('/api', authRouter);
+app.use('/api/auth', authRouter);
+
+app.get('/api/user/test', (req, res) => {
+  res.send('Hello World');
+});
