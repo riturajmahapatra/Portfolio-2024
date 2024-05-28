@@ -1,52 +1,57 @@
-# Portfolio-2024
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<body style="font-family: sans-serif; margin: 0; padding: 20px;">
-  <h1 style="text-align: center; font-size: 2em;">Crud App</h1>
-  <p>This is a portfolio app which allows others to see my work worldwide.</p>
+</head>
+<body>
+  <h1>Portfolio-2024</h1>
+  <p>This is a portfolio application that allows others to see your work worldwide.</p>
 
-**Prerequisites:**
+  <h2>Prerequisites</h2>
 
   <ul>
     <li>Node.js 16.x+ (<a href="https://nodejs.org/en/">https://nodejs.org/en/</a>)</li>
   </ul>
 
-**Setup (VS Code):**
+  <h2>Setup (VS Code)</h2>
 
   <ol>
     <li>Clone repo (if using Git).</li>
     <li>Open terminal (Ctrl+Shift+G).</li>
     <li><code>cd your-project-name</code>.</li>
-    <li>Install deps: <code>npm install</code> or <code>yarn install</code>.</li>
+    <li>Install dependencies: <code>npm install</code> or <code>yarn install</code>.</li>
   </ol>
 
-**Configuration:**
+  <h2>Configuration</h2>
 
   <ol>
     <li>
-      Create MongoDB Atlas account (<a href="https://www.mongodb.com/basics/create-database">https://www.mongodb.com/basics/create-database</a>).
+      Create a MongoDB Atlas account (<a href="https://www.mongodb.com/basics/create-database">https://www.mongodb.com/basics/create-database</a>).
     </li>
-    <li>Create cluster & database.</li>
+    <li>Create a cluster and database.</li>
     <li>
-      Add `.env` file (root dir):
-      <pre style="background-color: #eee; padding: 10px;">
-      PORT=...
-      MONGODB_URL=...
+      Add a `.env` file (root directory):
+      <pre>PORT=...
+MONGODB_URL=mongodb://your-username:your-password@cluster-endpoint:port/your-database?retryWrites=true&w=majority
+      # Replace placeholders with your actual MongoDB Atlas connection details
 
+      **Important:** Don't commit the `.env` file!
       </pre>
-      **Important:** Don't commit `.env`!
     </li>
-
   </ol>
 
-**Running (VS Code):**
+  <h2>Running (VS Code)</h2>
 
   <ol>
     <li>Backend: `cd Backend; npm start`.</li>
-    <li>Frontend : `cd Frontend; npm run dev`.</li>
+    <li>Frontend: `cd Frontend; npm run dev`.</li>
   </ol>
 
-  <div class="contact" style="text-align: center; margin-top: 20px;">
-    <span> How to reach me:</span> <a href="mailto:riturajmahapatra@gmail.com">riturajmahapatra@gmail.com</a>
+  <div class="contact">
+    <span>How to reach me:</span> <a href="mailto:riturajmahapatra@gmail.com">riturajmahapatra@gmail.com</a>
   </div>
 
 </body>
+</html>
