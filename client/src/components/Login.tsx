@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import SectionHeading from './SectionHeading';
+import { FaPaperPlane } from 'react-icons/fa6';
 
 interface LoginCredentials {
   username: string;
@@ -41,9 +43,8 @@ const Login: React.FC = () => {
       }
 
       const data = await response.json();
-      // Handle successful login (e.g., store token, redirect)
+
       console.log('Login successful:', data);
-      // ...
     } catch (error) {
       setErrorMessage((error as Error).message);
     } finally {
@@ -53,43 +54,53 @@ const Login: React.FC = () => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <div className="form-group">
-        <label htmlFor="username">Username:</label>
+      <div className=" flex items-center justify-center">
+        <SectionHeading>Admin</SectionHeading>
+      </div>
+      <div className="flex max-md:grid  items-center justify-center text-center gap-5">
         <input
+          className="h-14  px-4 border rounded-lg borderBlack  dark:bg-opacity-80 dark:focus:bg-opacity-100 transition-all dark:outline-none"
           type="text"
+          placeholder="username"
           name="username"
           id="username"
           value={credentials.username}
           onChange={handleChange}
           required
         />
-      </div>
-      <div className="form-group">
-        <label htmlFor="email">Email:</label>
+
         <input
           type="email"
           name="email"
+          className="h-14 px-4 border rounded-lg borderBlack  dark:bg-opacity-80 dark:focus:bg-opacity-100 transition-all dark:outline-none"
+          placeholder="email"
           id="email"
           value={credentials.email}
           onChange={handleChange}
           required
         />
-      </div>
-      <div className="form-group">
-        <label htmlFor="password">Password:</label>
+
         <input
           type="password"
           name="password"
+          placeholder="password"
+          className="h-14 px-4 border rounded-lg borderBlack  dark:bg-opacity-80 dark:focus:bg-opacity-100 transition-all dark:outline-none"
           id="password"
           value={credentials.password}
           onChange={handleChange}
           required
         />
+
+        {errorMessage && <div className="error-message">{errorMessage}</div>}
+        <button
+          type="submit"
+          className="group flex items-center justify-center gap-2 h-[3rem] w-[8rem] bg-gray-900 text-white rounded-full outline-none transition-all focus:scale-110 hover:scale-110 hover:bg-gray-950 active:scale-105dark:bg-opacity-10 disabled:scale-100 disabled:bg-opacity-65"
+          disabled={isLoading}
+        >
+          {isLoading ? 'Logging in...' : 'Login'}
+          <FaPaperPlane className="text-xs opacity-70 transition-all group-hover:translate-x-1 group-hover:-translate-y-1" />{' '}
+        </button>
       </div>
-      {errorMessage && <div className="error-message">{errorMessage}</div>}
-      <button type="submit" disabled={isLoading}>
-        {isLoading ? 'Logging in...' : 'Login'}
-      </button>
     </form>
   );
 };
