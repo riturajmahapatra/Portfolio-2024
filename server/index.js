@@ -30,3 +30,5 @@ app.use(router);
 
 /* login */
 app.use('/api/v1', authRouter);
+
+export default app;
