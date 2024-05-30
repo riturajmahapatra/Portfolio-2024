@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import SectionHeading from './SectionHeading';
 import { FaPaperPlane } from 'react-icons/fa6';
+import { useNavigate } from 'react-router-dom';
 
 interface LoginCredentials {
   username: string;
@@ -9,6 +10,7 @@ interface LoginCredentials {
 }
 
 const Login: React.FC = () => {
+  const navigate = useNavigate();
   const [credentials, setCredentials] = useState<LoginCredentials>({
     username: '',
     password: '',
@@ -32,7 +34,7 @@ const Login: React.FC = () => {
     setErrorMessage('');
 
     try {
-      const response = await fetch('/api/login', {
+      const response = await fetch('http://localhost:8500/api/v1/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(credentials),
@@ -45,6 +47,7 @@ const Login: React.FC = () => {
       const data = await response.json();
 
       console.log('Login successful:', data);
+      navigate('/');
     } catch (error) {
       setErrorMessage((error as Error).message);
     } finally {
