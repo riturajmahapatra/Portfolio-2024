@@ -1,7 +1,20 @@
 import express from 'express';
-import { signup } from '../Controller/authController.js';
+import {
+  addExperience,
+  getUser,
+  login,
+  logout,
+  myProfile,
+  updateUser,
+} from '../Controller/authController.js';
+import { isAuthenticated } from '../Middlewares/auth.js';
 const router = express.Router();
 
-router.post('/signup', signup);
+router.post('/login', login);
+router.get('/logout', logout);
+router.get('/user', getUser);
+router.get('/me', isAuthenticated, myProfile);
+router.put('/admin/update', isAuthenticated, updateUser);
+router.put('/admin/experience/add', isAuthenticated, addExperience);
 
 export default router;

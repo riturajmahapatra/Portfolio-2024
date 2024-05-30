@@ -5,12 +5,13 @@ import cors from 'cors';
 import mongoose from 'mongoose';
 import router from './Routes/userRoute.js';
 import authRouter from './Routes/authRoute.js';
-import portfolioRoute from '../server/Routes/portfolioRoute.js';
-
+import cookieParser from 'cookie-parser';
 const app = express();
 app.use(express.json());
 app.use(bodyParser.json());
 app.use(cors());
+app.use(express.urlencoded({ extended: true, limit: '10mb' }));
+app.use(cookieParser());
 dotenv.config();
 
 //port connection to the backend server
@@ -27,11 +28,5 @@ mongoose
 
 app.use(router);
 
-/* signup */
-app.use('/api/auth', authRouter);
-
-app.get('/api/user/test', (req, res) => {
-  res.send('Hello World');
-});
-
-app.use('/api/data', portfolioRoute);
+/* login */
+app.use('/api/v1', authRouter);
