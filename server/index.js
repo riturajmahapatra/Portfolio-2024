@@ -2,7 +2,7 @@ import express from 'express';
 import dotenv from 'dotenv';
 import cors from 'cors';
 import mongoose from 'mongoose';
-// import router from './Routes/userRoute.js';
+import router from './Routes/userRoute.js';
 // import authRouter from './Routes/authRoute.js';
 import cookieParser from 'cookie-parser';
 const app = express();
@@ -28,7 +28,7 @@ app.get('/', (req, res) => {
   res.send('Hello World!');
 });
 
-// app.use(router);
+app.use(router);
 
 /* login */
 // app.use('/api/v1', authRouter);
