@@ -18,7 +18,7 @@ function Contact() {
     const { email, name, message } = formData;
 
     try {
-      const response = await fetch('http://localhost:8500/register', {
+      const response = await fetch('/register', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, name, message }),

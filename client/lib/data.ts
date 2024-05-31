@@ -4,9 +4,6 @@ import jansevaImg from '../src/assets/js-1.png';
 import carWalaImg from '../src/assets/cw-1.png';
 import taxiImg from '../src/assets/tx-1.png';
 import countrynomicsImg from '../src/assets/cn-1.png';
-// import corpcommentImg from "@/public/corpcomment.png";
-// import rmtdevImg from "@/public/rmtdev.png";
-// import wordanalyticsImg from "@/public/wordanalytics.png";
 
 export const links = [
   {
