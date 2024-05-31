@@ -28,9 +28,9 @@ mongoose
 
 app.use(router);
 
-app.get('/', (req, res) => {
-  req.send('This is the backend server');
-});
+// app.get('/', (req, res) => {
+//   req.json('This is the backend server');
+// });
 
 /* login */
 app.use('/api/v1', authRouter);
