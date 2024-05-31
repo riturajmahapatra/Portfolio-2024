@@ -1,9 +1,9 @@
 import React from 'react';
 import { CgWorkAlt } from 'react-icons/cg';
-import jansevaImg from '../src/assets/js-1.png';
-import carWalaImg from '../src/assets/cw-1.png';
-import taxiImg from '../src/assets/tx-1.png';
-import countrynomicsImg from '../src/assets/cn-1.png';
+import jansevaImg from '/js-1.png';
+import carWalaImg from '/cw-1.png';
+import taxiImg from '/tx-1.png';
+import countrynomicsImg from '/cn-1.png';
 
 export const links = [
   {
