@@ -38,13 +38,5 @@
     "typescript": "^5.2.2",
     "vite": "^5.2.0"
   },
-  "proxy": {
-    "/api": {
-      "target": "https://portfolio-2024-server.vercel.app/",
-      "changeOrigin": true,
-      "pathRewrite": {
-        "^/api": ""
-      }
-    }
-  }
+  "proxy": "http://localhost:8500"
 }

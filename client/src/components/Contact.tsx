@@ -18,11 +18,14 @@ function Contact() {
     const { email, name, message } = formData;
 
     try {
-      const response = await fetch('/register', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email, name, message }),
-      });
+      const response = await fetch(
+        'https://portfolio-2024-server.vercel.app/register',
+        {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email, name, message }),
+        }
+      );
       if (response.ok) {
         console.log('Email sent successfully!');
         setFormData(initialFormState);
