@@ -2,6 +2,7 @@ import React from 'react';
 import { CgWorkAlt } from 'react-icons/cg';
 import jansevaImg from '/js-1.png';
 import carWalaImg from '/cw-1.png';
+import crudAppImg from '/ca-1.png';
 import taxiImg from '/tx-1.png';
 import countrynomicsImg from '/cn-1.png';
 
@@ -70,7 +71,7 @@ export const projectsData = [
     description:
       'This CRUD app is a fundamental web application that allows users to perform Create, Read, Update, and Delete operations on data.',
     tags: ['React', 'Express', 'Node.js', 'MongoDB'],
-    imageUrl: carWalaImg,
+    imageUrl: crudAppImg,
     imgHref: 'https://car-wala.vercel.app',
   },
 ];
