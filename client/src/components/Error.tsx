@@ -29,7 +29,7 @@ const Error: React.FC = () => {
                   <span className="font-semibold">yet</span> available!
                 </p>
                 <a href="/">
-                  <button className="group flex items-center justify-center gap-2 h-[3rem] w-[8rem] bg-gray-800 text-white rounded-full outline-none transition-all focus:scale-110 hover:scale-110 hover:bg-gray-950 active:scale-105dark:bg-opacity-10 disabled:scale-100 disabled:bg-opacity-65">
+                  <button className="group flex items-center justify-center gap-2 h-[3rem] w-[8rem] bg-[#39AD31] text-white rounded-full outline-none transition-all focus:scale-110 hover:scale-110 hover:bg-[#2f8f28] active:scale-105dark:bg-opacity-10 disabled:scale-100 disabled:bg-opacity-65">
                     Go Back{' '}
                     <FaPaperPlane className="text-xs opacity-70 transition-all group-hover:translate-x-1 group-hover:-translate-y-1" />{' '}
                   </button>
