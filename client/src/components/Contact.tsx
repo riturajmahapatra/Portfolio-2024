@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import SectionHeading from './SectionHeading';
 import { FaPaperPlane } from 'react-icons/fa6';
 import { useState } from 'react';
+import toast from 'react-hot-toast';
 
 function Contact() {
   const initialFormState = {
@@ -30,6 +31,9 @@ function Contact() {
         console.log('Email sent successfully!');
         setFormData(initialFormState);
         // window.location.reload();
+        toast.success(`Thankyou, ${name}`, {
+          position: 'top-right',
+        });
       } else {
         const errorMessage = await response.text();
         console.error('Failed to send email:', errorMessage);
