@@ -3,7 +3,7 @@ import dotenv from 'dotenv';
 import cors from 'cors';
 import mongoose from 'mongoose';
 import router from './Routes/userRoute.js';
-// import authRouter from './Routes/authRoute.js';
+import authRouter from './Routes/authRoute.js';
 import cookieParser from 'cookie-parser';
 const app = express();
 app.use(express.json());
@@ -31,6 +31,6 @@ app.get('/', (req, res) => {
 app.use(router);
 
 /* login */
-// app.use('/api/v1', authRouter);
+app.use('/api/v1', authRouter);
 
 export default app;
