@@ -50,7 +50,7 @@ MONGODB_URL=mongodb://your-username:your-password@cluster-endpoint:port/your-dat
     <li>Frontend: `cd Frontend; npm run dev`.</li>
   </ol>
 
-<h2>Running (in Versel):</h2>
+<h2>Running (in Vercel):</h2>
 
   <ol> 
   create a new file in the root of your backend with the name : "vercel.json" and add the following code in that
