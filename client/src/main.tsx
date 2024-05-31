@@ -4,11 +4,13 @@ import App from './App.tsx';
 import './index.css';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import Login from './components/Login.tsx';
+import Error from './components/Error.tsx';
 
 const router = createBrowserRouter([
   {
     path: '/',
     element: <App />,
+    errorElement: <Error />,
   },
   {
     path: '/admin',
