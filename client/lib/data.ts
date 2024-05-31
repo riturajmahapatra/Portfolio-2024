@@ -72,7 +72,7 @@ export const projectsData = [
       'This CRUD app is a fundamental web application that allows users to perform Create, Read, Update, and Delete operations on data.',
     tags: ['React', 'Express', 'Node.js', 'MongoDB'],
     imageUrl: crudAppImg,
-    imgHref: 'https://car-wala.vercel.app',
+    imgHref: 'https://crud-app-one-eta.vercel.app/',
   },
 ];
 
