@@ -2,8 +2,8 @@ import express from 'express';
 import dotenv from 'dotenv';
 import cors from 'cors';
 import mongoose from 'mongoose';
-import router from './Routes/userRoute.js';
-import authRouter from './Routes/authRoute.js';
+// import router from './Routes/userRoute.js';
+// import authRouter from './Routes/authRoute.js';
 import cookieParser from 'cookie-parser';
 const app = express();
 app.use(express.json());
@@ -24,9 +24,13 @@ mongoose
   })
   .catch((error) => console.error('Error connecting to MongoDB: ', error));
 
-app.use(router);
+app.get('/', (req, res) => {
+  res.send('Hello World!');
+});
+
+// app.use(router);
 
 /* login */
-app.use('/api/v1', authRouter);
+// app.use('/api/v1', authRouter);
 
 export default app;
