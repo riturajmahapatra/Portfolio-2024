@@ -6,7 +6,6 @@ import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import Login from './components/Login.tsx';
 import Error from './components/Error.tsx';
 import { Toaster } from 'react-hot-toast';
-import { ErrorBoundary } from 'react-error-boundary';
 
 const router = createBrowserRouter([
   {
@@ -17,18 +16,13 @@ const router = createBrowserRouter([
   {
     path: '/admin',
     element: <Login />,
-  },
-  {
-    path: '/',
     errorElement: <Error />,
   },
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <ErrorBoundary FallbackComponent={Error}>
-      <RouterProvider router={router} />
-      <Toaster />
-    </ErrorBoundary>
+    <RouterProvider router={router} />
+    <Toaster />
   </React.StrictMode>
 );
