@@ -34,11 +34,14 @@ const Login: React.FC = () => {
     setErrorMessage('');
 
     try {
-      const response = await fetch('http://localhost:8500/api/v1/login', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(credentials),
-      });
+      const response = await fetch(
+        'https://portfolio-2024-kappa-six.vercel.app/api/v1/login',
+        {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(credentials),
+        }
+      );
 
       if (!response.ok) {
         throw new Error(`Login failed with status ${response.status}`);
