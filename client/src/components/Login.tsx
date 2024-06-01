@@ -35,7 +35,7 @@ const Login: React.FC = () => {
 
     try {
       const response = await fetch(
-        'https://portfolio-2024-kappa-six.vercel.app/api/v1/login',
+        'https://portfolio-2024-server.vercel.app/api/v1/login',
         {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },

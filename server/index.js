@@ -5,6 +5,7 @@ import mongoose from 'mongoose';
 import router from './Routes/userRoute.js';
 import authRouter from './Routes/authRoute.js';
 import cookieParser from 'cookie-parser';
+import adminData from './Controller/adminController.js';
 const app = express();
 app.use(express.json());
 app.use(cors());
@@ -32,5 +33,7 @@ app.use(router);
 
 /* login */
 app.use('/api/v1', authRouter);
+
+app.use('/api/v1', adminData);
 
 export default app;
