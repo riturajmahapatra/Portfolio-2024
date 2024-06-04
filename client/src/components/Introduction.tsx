@@ -6,8 +6,13 @@ import { HiDownload } from 'react-icons/hi';
 import { BiSolidRightArrow } from 'react-icons/bi';
 import { BsLinkedin } from 'react-icons/bs';
 import { FaSquareGithub } from 'react-icons/fa6';
-
+import { useAppSelector } from '../app/hooks';
 export default function Introduction() {
+  const portfolioData = useAppSelector((state) => state.app);
+  console.log(portfolioData);
+  const intro = portfolioData?.portfolioData?.intro[0];
+  console.log(intro);
+
   return (
     <section className=" flex flex-col items-center justify-center mb-28 max-w-[50rem] text-center sm:mb-0 m-auto">
       <div className="flex justify-center items-center">
@@ -29,13 +34,7 @@ export default function Introduction() {
         initial={{ opacity: 0, y: 100 }}
         animate={{ opacity: 1, y: 0 }}
       >
-        <span className="font-bold">Hello, I'm Rituraj Mahapatra.</span> I'm a
-        novice <span className="font-bold">full-stack developer</span> with some
-        experience. I enjoy building{' '}
-        <span className="italic">sites & apps</span>. Iam passionate about
-        creating engaging web experiences. 💡 Currently exploring the world of
-        WEB using
-        <span className="underline"> React & Next.js</span>.
+        {intro.introduction || ''}
       </motion.p>
       <div className="flex justify-center items-center mt-12 mb-20 gap-6 max-sm:flex-wrap">
         <a

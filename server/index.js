@@ -6,6 +6,7 @@ import router from './Routes/userRoute.js';
 import authRouter from './Routes/authRoute.js';
 import cookieParser from 'cookie-parser';
 import adminData from './Controller/adminController.js';
+import { Intro, About, Project, Experience } from './Models/portfolioModel.js';
 const app = express();
 app.use(express.json());
 app.use(cors());
@@ -35,5 +36,21 @@ app.use(router);
 app.use('/api/v1', authRouter);
 
 app.use('/api/v1', adminData);
+
+app.get('api/v1/data', async (req, res) => {
+  try {
+    const data = {
+      intro: await Intro.find(),
+      about: await About.find(),
+      projects: await Project.find(),
+      experiences: await Experience.find(),
+    };
+    res.status(200).json(data);
+    console.log(data);
+  } catch (error) {
+    console.error('Error fetching data:', error);
+    res.status(500).send('Server Error');
+  }
+});
 
 export default app;
