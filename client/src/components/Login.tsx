@@ -4,7 +4,6 @@ import { FaEye, FaEyeSlash, FaPaperPlane } from 'react-icons/fa6';
 import { useNavigate } from 'react-router-dom';
 import AdminPages from './Admin/AdminPages';
 import toast from 'react-hot-toast';
-import { useAppSelector } from '../app/hooks';
 
 interface LoginCredentials {
   username: string;
@@ -21,15 +20,13 @@ const Login: React.FC = () => {
   });
   const [isLoading, setIsLoading] = useState(false);
 
-  const portfolioData = useAppSelector((state) => state.app);
-  console.log(portfolioData);
   /* login logout */
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   useEffect(() => {
     const storedUser = localStorage.getItem('loggedInUser');
     if (storedUser) {
       setIsLoggedIn(true);
-      console.log('logged in');
+      // console.log('logged in');
       navigate('/adminpages');
     }
   }, [navigate]);

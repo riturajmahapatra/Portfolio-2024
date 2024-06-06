@@ -10,7 +10,7 @@ export const fetchPortfolioData = createAsyncThunk(
         'https://portfolio-2024-server.vercel.app/api/v1/data'
       );
       dispatch(SetPortFolioData(response.data));
-      console.log(response.data);
+      // console.log(response.data);
     } catch (error) {
       error;
     }
@@ -18,8 +18,8 @@ export const fetchPortfolioData = createAsyncThunk(
 );
 
 interface PortfolioData {
-  intro: { introduction: string }[];
-  about: { about: string }[];
+  intro: { _id: { $oid: string }; introduction: string }[];
+  about: { _id: { $oid: string }; about: string }[];
   introduction: string;
   projects: {
     title: string;

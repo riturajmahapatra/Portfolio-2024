@@ -22,9 +22,9 @@ router.get('/data', async (req, res) => {
   }
 });
 
-// update intro page content
+// update page content
 
-router.put('/update-intro', async (req, res) => {
+router.post('/update-intro', async (req, res) => {
   try {
     const intro = await Intro.findByIdAndUpdate(
       { _id: req.body._id },
@@ -34,6 +34,22 @@ router.put('/update-intro', async (req, res) => {
     res
       .status(200)
       .send({ data: intro, success: true, msg: 'Intro Updated Sucessfully' });
+    console.log('data updated');
+  } catch (error) {
+    console.error('Error Updating Data:', error);
+    res.status(500).send('Server Error');
+  }
+});
+router.post('/update-about', async (req, res) => {
+  try {
+    const about = await About.findByIdAndUpdate(
+      { _id: req.body._id },
+      req.body,
+      { new: true }
+    );
+    res
+      .status(200)
+      .send({ data: about, success: true, msg: 'About Updated Sucessfully' });
     console.log('data updated');
   } catch (error) {
     console.error('Error Updating Data:', error);
