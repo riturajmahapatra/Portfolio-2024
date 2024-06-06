@@ -18,14 +18,9 @@ export const fetchPortfolioData = createAsyncThunk(
 );
 
 interface PortfolioData {
-  portfolioData?: {
-    intro: string;
-    about: string;
-  };
-  intro: {
-    introduction: string;
-  };
-  about: string;
+  intro: { introduction: string }[];
+  about: { about: string }[];
+  introduction: string;
   projects: {
     title: string;
     description: string;

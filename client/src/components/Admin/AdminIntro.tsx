@@ -5,7 +5,7 @@ import { useAppSelector } from '../../app/hooks';
 const AdminIntro = () => {
   const portfolioData = useAppSelector((state) => state.app);
   console.log(portfolioData);
-  const intro = portfolioData?.portfolioData?.intro[0]?.introduction;
+  const intro = portfolioData?.portfolioData?.intro[0].introduction;
   console.log(intro);
 
   const [form] = useForm();
@@ -23,11 +23,7 @@ const AdminIntro = () => {
         style={{ maxWidth: 800 }}
         onFinish={onFinish}
       >
-        <Form.Item
-          name="introduction"
-          label="Introduction"
-          initialValue={intro}
-        >
+        <Form.Item name="introduction" label="Introduction">
           <Input placeholder="Intro" required />
           {intro}
         </Form.Item>
