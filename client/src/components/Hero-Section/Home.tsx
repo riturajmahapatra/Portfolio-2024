@@ -1,5 +1,4 @@
 import About from '../About';
-// import AdminPages from '../Admin/AdminPages';
 import Contact from '../Contact';
 import Exprience from '../Exprience';
 import Footer from '../Footer';
@@ -20,7 +19,6 @@ export default function Home() {
       <Exprience />
       <Contact />
       <Footer />
-      {/* <AdminPages /> */}
     </div>
   );
 }

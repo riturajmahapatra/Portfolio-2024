@@ -11,7 +11,7 @@ export default function Introduction() {
   const portfolioData = useAppSelector((state) => state.app);
   console.log(portfolioData);
   const intro = portfolioData?.portfolioData?.intro[0].introduction;
-  console.log(intro);
+  // console.log(intro);
 
   return (
     <section className=" flex flex-col items-center justify-center mb-28 max-w-[50rem] text-center sm:mb-0 m-auto">

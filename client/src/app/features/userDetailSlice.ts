@@ -22,12 +22,13 @@ interface PortfolioData {
   about: { _id: { $oid: string }; about: string }[];
   introduction: string;
   projects: {
+    _id: { $oid: string };
     title: string;
     description: string;
     tags: string[];
     imageUrl: string;
     imgHref: string;
-  };
+  }[];
   technologies: string[];
   links: {
     website?: string;

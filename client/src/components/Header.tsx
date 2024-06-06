@@ -38,14 +38,10 @@ function Header() {
             ))}
           </ul>
         </nav>
-        <div
-          className="absolute flex top-[1.1rem] right-[2rem] h-12 -translate-x-1/2
-        py-2"
-        >
+        <div className="absolute flex top-[1.1rem] right-[2rem] h-12 -translate-x-1/2 py-2">
           <button
             type="submit"
-            className="  flex group items-center justify-center gap-2 h-[3rem] w-[8rem] bg-white text-gray-500 rounded-full outline-none transition-all 
-            bg-opacity-80  backdrop-blur-[0.7rem] max-lg:hidden"
+            className="flex group items-center justify-center gap-2 h-[3rem] w-[8rem] bg-transparent border text-gray-500 rounded-full outline-none transition-all bg-opacity-80 backdrop-blur-[0.7rem] max-lg:hidden opacity-0 hover:opacity-100"
             onClick={() => navigate('/admin')}
           >
             Login{' '}
