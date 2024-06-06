@@ -1,7 +1,13 @@
 import { motion } from 'framer-motion';
 import SectionHeading from './SectionHeading';
+import { useAppSelector } from '../app/hooks';
 
 function About() {
+  const portfolioData = useAppSelector((state) => state.app);
+  // console.log(portfolioData);
+  const about = portfolioData?.portfolioData?.about[0].about;
+  // console.log(about);
+
   return (
     <div>
       <motion.section
@@ -12,7 +18,8 @@ function About() {
         id="about"
       >
         <SectionHeading>about me</SectionHeading>
-        <p className="mb-3">
+        {about || ''}
+        {/* <p className="mb-3">
           Civil engineer by degree, coder by heart. Built my coding skills from
           the ground up as a self-taught developer, I love the problem-solving
           thrill of web development. I craft solutions with React, Next.js,
@@ -20,12 +27,12 @@ function About() {
           learning, always building. Looking for new{' '}
           <span className="font-medium">experiences</span> as a software
           developer.
-        </p>
+        </p> */}
 
-        <p className="mb-3">
+        {/* <p className="mb-3">
           <span className="italic">When I'm not coding</span>, I enjoy cooking
           food , watching anime, and playing with my dog.
-        </p>
+        </p> */}
       </motion.section>
     </div>
   );
