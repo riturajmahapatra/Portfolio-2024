@@ -9,9 +9,9 @@ import { FaSquareGithub } from 'react-icons/fa6';
 import { useAppSelector } from '../app/hooks';
 export default function Introduction() {
   const portfolioData = useAppSelector((state) => state.app);
-  console.log(portfolioData);
-  const intro = portfolioData?.portfolioData?.intro[0];
-  console.log(intro);
+  // console.log(portfolioData);
+  const intro = portfolioData?.portfolioData?.intro[0]?.introduction;
+  // console.log(intro);
 
   return (
     <section className=" flex flex-col items-center justify-center mb-28 max-w-[50rem] text-center sm:mb-0 m-auto">
@@ -21,20 +21,14 @@ export default function Introduction() {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ type: 'tween', duration: 0.25 }}
           id="home"
-        >
-          {/* <img
-            src={myImg}
-            alt="rituraj"
-            className="w-24 object-cover quality-high h-auto rounded-full shadow-2xl border-[0.3rem] border-white mt-28"
-          /> */}
-        </motion.div>
+        ></motion.div>
       </div>
       <motion.p
         className="mb-10 mt-[7rem] px-4 text-2xl font-medium !leading-[1.5] sm:text-4xl "
         initial={{ opacity: 0, y: 100 }}
         animate={{ opacity: 1, y: 0 }}
       >
-        {intro.introduction || ''}
+        {intro || ''}
       </motion.p>
       <div className="flex justify-center items-center mt-12 mb-20 gap-6 max-sm:flex-wrap">
         <a

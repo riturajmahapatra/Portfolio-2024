@@ -1,7 +1,10 @@
 import { motion } from 'framer-motion';
 import { links } from '../../lib/data';
+import { useNavigate } from 'react-router-dom';
+import { FaPaperPlane } from 'react-icons/fa6';
 
 function Header() {
+  const navigate = useNavigate();
   return (
     <>
       <header className="z-[999] relative">
@@ -35,6 +38,20 @@ function Header() {
             ))}
           </ul>
         </nav>
+        <div
+          className="absolute flex top-[1.1rem] right-[2rem] h-12 -translate-x-1/2
+        py-2"
+        >
+          <button
+            type="submit"
+            className="  flex group items-center justify-center gap-2 h-[3rem] w-[8rem] bg-white text-gray-500 rounded-full outline-none transition-all 
+            bg-opacity-80  backdrop-blur-[0.7rem] max-lg:hidden"
+            onClick={() => navigate('/admin')}
+          >
+            Login{' '}
+            <FaPaperPlane className="text-xs opacity-70 transition-all group-hover:translate-x-1 group-hover:-translate-y-1" />{' '}
+          </button>
+        </div>
       </header>
     </>
   );

@@ -22,4 +22,23 @@ router.get('/data', async (req, res) => {
   }
 });
 
+// update intro page content
+
+router.put('/update-intro', async (req, res) => {
+  try {
+    const intro = await Intro.findByIdAndUpdate(
+      { _id: req.body._id },
+      req.body,
+      { new: true }
+    );
+    res
+      .status(200)
+      .send({ data: intro, success: true, msg: 'Intro Updated Sucessfully' });
+    console.log('data updated');
+  } catch (error) {
+    console.error('Error Updating Data:', error);
+    res.status(500).send('Server Error');
+  }
+});
+
 export default router;
