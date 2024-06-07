@@ -18,7 +18,7 @@ const AdminIntro = () => {
   const onFinish = async (values: FormValues) => {
     try {
       const response = await axios.post(
-        'http://localhost:8500/api/v1/update-intro',
+        'https://portfolio-2024-server.vercel.app/api/v1/update-intro',
         { ...values, _id: portfolioData?.portfolioData?.intro[0]._id }
       );
 

@@ -33,7 +33,7 @@ function AdminExperience() {
       let response;
       if (selectItemForEdit) {
         response = await axios.post(
-          'http://localhost:8500/api/v1/update-experience',
+          'https://portfolio-2024-server.vercel.app/api/v1/update-experience',
           {
             ...values,
             _id: selectItemForEdit._id, // Use the _id of the selected item
@@ -41,7 +41,7 @@ function AdminExperience() {
         );
       } else {
         response = await axios.post(
-          'http://localhost:8500/api/v1/add-experience',
+          'https://portfolio-2024-server.vercel.app/api/v1/add-experience',
           values
         );
       }
@@ -72,7 +72,7 @@ function AdminExperience() {
   const onDelete = async (item: Experience) => {
     try {
       const response = await axios.post(
-        'http://localhost:8500/api/v1/delete-experience',
+        'https://portfolio-2024-server.vercel.app/api/v1/delete-experience',
         { _id: item._id }
       );
 

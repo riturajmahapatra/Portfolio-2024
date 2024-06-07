@@ -19,7 +19,7 @@ const AdminAbout = () => {
   const onFinish = async (values: FormValues) => {
     try {
       const response = await axios.post(
-        'http://localhost:8500/api/v1/update-about',
+        'https://portfolio-2024-server.vercel.app/api/v1/update-about',
         { ...values, _id: portfolioData?.portfolioData?.about[0]._id }
       );
 

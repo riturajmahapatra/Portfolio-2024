@@ -34,7 +34,7 @@ function AdminProjects() {
       let response;
       if (selectItemForEdit) {
         response = await axios.post(
-          'http://localhost:8500/api/v1/update-project',
+          'https://portfolio-2024-server.vercel.app/api/v1/update-project',
           {
             ...values,
             _id: selectItemForEdit._id, // Use the _id of the selected item
@@ -42,7 +42,7 @@ function AdminProjects() {
         );
       } else {
         response = await axios.post(
-          'http://localhost:8500/api/v1/add-project',
+          'https://portfolio-2024-server.vercel.app/api/v1/add-project',
           values
         );
       }
@@ -73,7 +73,7 @@ function AdminProjects() {
   const onDelete = async (item: Projects) => {
     try {
       const response = await axios.post(
-        'http://localhost:8500/api/v1/delete-project',
+        'https://portfolio-2024-server.vercel.app/api/v1/delete-project',
         { _id: item._id }
       );
 
