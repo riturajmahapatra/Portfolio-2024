@@ -101,7 +101,7 @@ function AdminProjects() {
               <p className="text-sm text-start">{proj.description}</p>
 
               <img
-                className="text-gray-600 mt-auto object-cover"
+                className="text-gray-600 mt-auto "
                 src={proj.imageUrl}
                 alt="Invalid Img URL"
               />
