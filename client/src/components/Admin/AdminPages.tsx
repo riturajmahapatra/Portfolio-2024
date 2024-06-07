@@ -3,11 +3,10 @@ import AdminIntro from './AdminIntro';
 import TabPane from 'antd/es/tabs/TabPane';
 import AdminAbout from './AdminAbout';
 import Logout from '../Logout';
-// import { useAppSelector } from '../../app/hooks';
+import AdminProjects from './AdminProjects';
+import AdminExperience from './AdminExperience';
 
 function AdminPages() {
-  // const portfolioData = useAppSelector((state) => state.app);
-  // console.log(portfolioData);
   return (
     <div>
       <div className="mx-auto max-w-[800px] text-center">
@@ -17,6 +16,12 @@ function AdminPages() {
           </TabPane>
           <TabPane tab="About" key="2">
             <AdminAbout />
+          </TabPane>
+          <TabPane tab="Projects" key="3">
+            <AdminProjects />
+          </TabPane>
+          <TabPane tab="Experience" key="4">
+            <AdminExperience />
           </TabPane>
         </Tabs>
         <Logout />

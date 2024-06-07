@@ -5,10 +5,10 @@ import Layout from './components/Layout';
 import './index.css';
 // import axios from 'axios';
 import { useAppDispatch, useAppSelector } from './app/hooks';
-import { fetchPortfolioData } from './app/features/userDetailSlice';
+import { ReloadData, fetchPortfolioData } from './app/features/userDetailSlice';
 
 function App() {
-  const portfolioData = useAppSelector((state) => state.app);
+  const { portfolioData, reloadData } = useAppSelector((state) => state.app);
   const dispatch = useAppDispatch();
 
   useEffect(() => {
@@ -19,6 +19,12 @@ function App() {
     console.log(portfolioData);
   }, [portfolioData]);
 
+  useEffect(() => {
+    if (reloadData) {
+      dispatch(fetchPortfolioData());
+      dispatch(ReloadData(false)); // Reset reloadData to false after triggering reload
+    }
+  }, [reloadData, dispatch]);
   return (
     <>
       <Layout>

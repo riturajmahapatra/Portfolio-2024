@@ -49,7 +49,7 @@ const Cards = ({ title, description, tags, imageUrl, imgHref }: CardProps) => {
           src={imageUrl}
           alt="Projects"
           className="absolute hidden sm:block top-8 h-[16rem] w-[35rem] rounded-lg shadow-2xl 
-          -right-52"
+          -right-52 object-cover object-center "
         />
       </a>
     </motion.div>

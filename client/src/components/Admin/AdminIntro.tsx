@@ -2,7 +2,10 @@ import { Form, Input, Button, Space } from 'antd';
 import { useAppDispatch, useAppSelector } from '../../app/hooks';
 import axios from 'axios';
 import toast from 'react-hot-toast';
-import { SetPortFolioData } from '../../app/features/userDetailSlice';
+import {
+  ReloadData,
+  SetPortFolioData,
+} from '../../app/features/userDetailSlice';
 
 const AdminIntro = () => {
   const portfolioData = useAppSelector((state) => state.app);
@@ -21,7 +24,7 @@ const AdminIntro = () => {
 
       if (response.status === 200) {
         const updatedIntro = response.data.data.introduction;
-        window.location.reload();
+        dispatch(ReloadData(true));
         dispatch(SetPortFolioData(updatedIntro));
         toast.success('Introduction Updated Successfully', {
           position: 'top-right',

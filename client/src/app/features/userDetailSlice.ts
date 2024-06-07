@@ -10,7 +10,7 @@ export const fetchPortfolioData = createAsyncThunk(
         'https://portfolio-2024-server.vercel.app/api/v1/data'
       );
       dispatch(SetPortFolioData(response.data));
-      // console.log(response.data);
+      dispatch(ReloadData(false));
     } catch (error) {
       error;
     }
@@ -29,6 +29,14 @@ interface PortfolioData {
     imageUrl: string;
     imgHref: string;
   }[];
+  experiences: {
+    _id: { $oid: string };
+    title: string;
+    company: string;
+    location: string;
+    description: string;
+    date: string;
+  }[];
   technologies: string[];
   links: {
     website?: string;
@@ -40,6 +48,7 @@ export const userDetails = createSlice({
   name: 'userDetails',
   initialState: {
     portfolioData: null as PortfolioData | null,
+    reloadData: false,
     users: [],
     loading: false,
     error: null,
@@ -48,8 +57,11 @@ export const userDetails = createSlice({
     SetPortFolioData: (state, action) => {
       state.portfolioData = action.payload;
     },
+    ReloadData: (state, action) => {
+      state.reloadData = action.payload;
+    },
   },
 });
 
 export default userDetails.reducer;
-export const { SetPortFolioData } = userDetails.actions;
+export const { SetPortFolioData, ReloadData } = userDetails.actions;

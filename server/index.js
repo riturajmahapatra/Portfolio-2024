@@ -6,11 +6,10 @@ import router from './Routes/userRoute.js';
 import authRouter from './Routes/authRoute.js';
 import cookieParser from 'cookie-parser';
 import adminData from './Controller/adminController.js';
-import { Intro, About, Project, Experience } from './Models/portfolioModel.js';
 const app = express();
 app.use(express.json());
 app.use(cors());
-app.use(express.urlencoded({ extended: true, limit: '10mb' }));
+app.use(express.urlencoded({ extended: true, limit: '50mb' }));
 app.use(cookieParser());
 dotenv.config();
 

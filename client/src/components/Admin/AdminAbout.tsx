@@ -1,6 +1,9 @@
 import { Button, Form, Input, Space } from 'antd';
 import toast from 'react-hot-toast';
-import { SetPortFolioData } from '../../app/features/userDetailSlice';
+import {
+  ReloadData,
+  SetPortFolioData,
+} from '../../app/features/userDetailSlice';
 import axios from 'axios';
 import { useAppDispatch, useAppSelector } from '../../app/hooks';
 
@@ -24,6 +27,7 @@ const AdminAbout = () => {
         const updatedAbout = response.data.data.about;
         dispatch(SetPortFolioData(updatedAbout));
         window.location.reload();
+        dispatch(ReloadData(true));
         toast.success('About Updated Successfully', {
           position: 'top-right',
         });

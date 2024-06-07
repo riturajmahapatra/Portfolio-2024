@@ -88,16 +88,16 @@ export const experiencesData = [
   },
   {
     title: 'Front-End Developer',
-    location: 'Dwarka , Delhi',
     company: 'Alishu Infotech Pvt Ltd.',
+    location: 'Dwarka , Delhi',
     description: `Leveraged my front-end development skills for 6 months. I built and maintained user interfaces for various projects like NGO websites, security websites, and e-commerce platforms.`,
     icon: React.createElement(CgWorkAlt),
     date: 'May 2023 - Nov 2023',
   },
   {
     title: 'Channel Manager',
-    location: 'Gurugram , Hayana',
     company: '4b Network Pvt Ltd.',
+    location: 'Gurugram , Hayana',
     description:
       'Leveraged my expertise in channel management for a year. Built and nurtured strong relationships with key partners, resulting in increased sales and market penetration. ',
     icon: React.createElement(CgWorkAlt),

@@ -4,9 +4,15 @@ import {
 } from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
 import SectionHeading from './SectionHeading';
-import { experiencesData } from '../../lib/data';
+import { useAppSelector } from '../app/hooks';
+import { CgWorkAlt } from 'react-icons/cg';
+import React from 'react';
 
 function Exprience() {
+  const portfolioData = useAppSelector((state) => state.app);
+  console.log(portfolioData);
+  const experience = portfolioData?.portfolioData?.experiences;
+  console.log(experience);
   return (
     <section
       id="experience"
@@ -14,7 +20,7 @@ function Exprience() {
     >
       <SectionHeading>My Experience</SectionHeading>
       <VerticalTimeline lineColor="">
-        {experiencesData.map((experience, index) => (
+        {experience?.map((experience, index) => (
           <VerticalTimelineElement
             key={index}
             contentStyle={{
@@ -27,7 +33,7 @@ function Exprience() {
               borderRight: '0.4rem solid #9ca3af',
             }}
             date={experience.date}
-            icon={experience.icon}
+            icon={React.createElement(CgWorkAlt)}
             iconStyle={{
               background: 'rgba(255, 255, 255)',
               fontSize: '1.5rem',
